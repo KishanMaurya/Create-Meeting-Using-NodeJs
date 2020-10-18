@@ -1,0 +1,66 @@
+<section class="login">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3 marginTop">
+                <div class="card borderRadius shadow border-0">
+                    <div class="card-body">
+                        <h4>Create Meeting <i class="far fa-handshake"></i></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1 borderRight"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="marginTop">
+                    <div class="card shadow border-0 card-Radius">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col"></div>
+                                <div class="col text-right">
+                                        <% if(messages.error) {%>
+                                            <span class="text-danger text-right text-sm mb-5"><%= messages.error %></span>
+                                        <%}%>
+                                </div>
+                            </div>
+                          
+                            
+                            <form action="/meeting" method="POST">
+                                
+                                <label for="name">Meeting-Name:-</label>
+                                <div class="forn-group">
+                                    <input type="text" name="meetingName" class="form-control" placeholder="Meeting name here..">
+                                </div>
+                                <div class="row">
+                                    <div class="col">
+                                        <label for="name">StartTime:-</label>
+                                        <div class="forn-group">
+                                            <input type="time" name="startTime" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <label for="name">EndTime:-</label>
+                                        <div class="forn-group">
+                                            <input type="time" name="endTime" class="form-control">
+                                        </div>
+                                    </div>
+                                </div>
+                                <label for="date">Select-Date:-</label>
+                                <div class="form-group">
+                                    <input type="date" name="createDate" class="form-control" placeholder="Select Date..">
+                                </div>
+                                <label for="desc">Meet Description:-</label>
+                                <div class="form-group">
+                                    <textarea name="description" id="" cols="30" rows="3" class="form-control" placeholder="Meeting Description here"></textarea>   
+                                </div>
+                                <div class="form-group text-right">
+                                    <button type="submit" class="btn font-bold loginBtn px-4 py-1 mt-3">Create <i class="far fa-hand-point-right"></i></button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

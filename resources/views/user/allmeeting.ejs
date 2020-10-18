@@ -1,0 +1,164 @@
+<section class="home">
+    <div class="container">
+        <div class="row mt-md-5">
+            <div class="col-md-12">
+                <h4 class="">All Metting Listing  Here</h4>
+            </div>
+        </div>
+        <hr>
+        <div class="row mt-md-5 justify-content-center">
+            <div class="card shadow">
+                <div class="card-body">
+                    <div class="col-md-12">
+                        <table class="table-bordered table table-responsive">
+                            <thead class="text-center">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Meeting Name</th>
+                                    <th>Description</th>
+                                    <th>StartTime</th>
+                                    <th>EndTime</th>
+                                    <th>Date</th>
+                                    <th>View</th>
+                                    <th>Edit</th>
+                                    <th>Delete</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <% var cnt=0;
+                                    meeting.forEach((meeting)=>{
+                                    cnt++
+                                    %>
+                                    <tr>
+                                        <td><%= cnt %></td>
+                                        <td><%= meeting.meetingName %></td>
+                                        <td><%= meeting.description %></td>
+                                        <td><%= meeting.startTime %></td>
+                                        <td><%= meeting.endTime %></td>
+                                        <td><%= moment(meeting.createDate).format('ddd Do MMM');  %></td>
+                                        <td>
+                                            <button data="<%= meeting._id %>" class="btn btn-info btn-small view"><i class="far fa-eye"></i></button>
+                                        </td>
+                                        <td>
+                                            <button data="<%= meeting._id %>" class="btn btn-primary edit"><i class="far fa-edit"></i></button>
+                                        </td>
+                                        <td>
+                                            <button data="<%= meeting._id %>" class="btn btn-danger delete"><i class="far fa-trash-alt"></i></button>
+                                        </td>
+                                    </tr>
+                                    <%
+                                }) %>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!----Create model for View -->
+
+<div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-white">
+        <div class="modal-header bg-success">
+          <h4 class="modal-title text-white font-weight-bold">Meeting View</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+              <table id="tableview" class="table table-hover table-bordered">
+                
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-sm" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+
+    </div>
+  </div>  
+
+  <!----Create model for edit -->
+
+  <div id="UpdateModel" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-white">
+        <div class="modal-header bg-success">
+          <h4 class="modal-title text-white font-weight-bold">Meeting Update</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+                <form action="/updateMetting" method="POST">
+                                
+                    <label for="name">Meeting-Name:-</label>
+                    <div class="forn-group">
+                        <input type="text" name="meetingName" class="form-control" placeholder="Meeting name here..">
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <label for="name">StartTime:-</label>
+                            <div class="forn-group">
+                                <input type="time" name="startTime" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col">
+                            <label for="name">EndTime:-</label>
+                            <div class="forn-group">
+                                <input type="time" name="endTime" class="form-control">
+                            </div>
+                        </div>
+                    </div>
+                    <label for="date">Select-Date:-</label>
+                    <div class="form-group">
+                        <input type="date" name="createDate" class="form-control" placeholder="Select Date..">
+                    </div>
+                    <label for="desc">Meet Description:-</label>
+                    <div class="form-group">
+                        <textarea name="description" id="" cols="30" rows="3" class="form-control" placeholder="Meeting Description here"></textarea>   
+                    </div>
+                    <div class="form-group text-right">
+                        <button type="submit" class="btn font-bold loginBtn px-4 py-1 mt-3">Create <i class="far fa-hand-point-right"></i></button>
+                    </div>
+                </form>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-sm close" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-succces btn-sm">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>  
+  <!----Create model for Delete -->
+
+  <div id="DeleteModel" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content bg-white">
+        <div class="modal-header bg-success">
+          <h4 class="modal-title text-white font-weight-bold">Meeting Delete</h4>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="card">
+            <div class="card-body">
+             <p>Are you sure , you want to delete this item</p>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-danger btn-sm close" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-succces btn-sm">Yes</button>
+        </div>
+      </div>
+    </div>
+  </div>  

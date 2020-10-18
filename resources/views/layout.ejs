@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Auth JWT</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  </head>
+  <body>
+      <section class="bg-success">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-light bg-success text-white">
+                <a class="navbar-brand text-white" href="/">
+                  <i class="fas fa-home"></i></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+              
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                  <ul class="navbar-nav mr-auto">
+                    <!-- <li class="nav-item active">
+                      <a class="nav-link text-white" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li> -->
+                    
+                  </ul>
+
+                  <ul class="navbar-nav ml-auto">
+                    <% if(user){
+                      %>
+                      <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle loginLink pr-3 py-1 mt-1" href="#" id="navbardrop" data-toggle="dropdown">
+                          <i class="far fa-user mx-2"></i><%= user.name%></a>
+                        <div class="dropdown-menu">
+                          <a class="dropdown-item colorChange" href="/meeting"><i class="far fa-handshake"></i> 
+                            <span class="text-center">Create Meeting</span> </a>
+                          <a class="dropdown-item colorChange pr-3 py-1 mt-1" href="/allmeeting">
+                            <i class="far fa-handshake"></i> <span class="text-right">All Meeting</span> </a>
+                          <div class="dropdown-divider my-3"></div>
+                          <form id="logout" action="/logout" method="POST">
+                            <a class="nav-link loginLink px-3 py-1 mt-1 mx-3 text-center" 
+                                onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                          </form>
+                      
+                        </div>
+                      </li>
+                      <%
+                    }else{
+                    %>
+                    <li class="nav-item ml-3">
+                      <a class="nav-link registerLink px-4 py-1 mt-1" href="/register">Register</a></li>
+                    <li class="nav-item ml-3">
+                      <a class="nav-link loginLink px-4 py-1 mt-1" href="/login">Login</a>
+                    </li>
+                    <%
+                    }%>
+                  </ul>
+                </div>
+
+              </nav>
+          </div>
+      </section>
+
+    <%- body %>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous"></script>
+  </body>
+</html>

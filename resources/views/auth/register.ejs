@@ -1,0 +1,45 @@
+<section class="registerMain">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-3 marginTop">
+                <div class="card borderRadius shadow border-0">
+                    <div class="card-body">
+                        <h4><span class="mr-3">Register Here</span> <i class="fas fa-users"></i></h4>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-1"></div>
+            <div class="col-md-1 borderRight"></div>
+            <div class="col-md-1"></div>
+            <div class="col-md-6">
+                <div class="marginTop">
+                    <div class="card shadow border-0 card-Radius">
+                        <div class="card-body">
+                            <% if(messages.error) {%>
+                                <span class="text-danger text-sm mb-5"><%= messages.error %></span>
+                            <%}%>
+                            <form action="/register" method="POST">
+                                
+                                <label for="name">Name:</label>
+                                <div class="forn-group">
+                                    <input type="text" name="name" class="form-control">
+                                </div>
+                                <label for="name">Email:</label>
+                                <div class="forn-group">
+                                    <input type="email" name="email" class="form-control">
+                                </div>
+                                <label for="name">Password:</label>
+                                <div class="forn-group">
+                                    <input type="password" name="password" class="form-control">
+                                </div>
+                                <div class="form-group text-right">
+                                    <button type="submit" class="btn font-bold registerBtn px-4 py-1 mt-3">Register</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

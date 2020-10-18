@@ -1,0 +1,83 @@
+label{
+    font-weight: bold;
+    color: tomato !important;
+}
+.registerLink,.loginLink{
+    background: whitesmoke;
+    color: tomato !important;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.registerBtn,.loginBtn{
+    background: tomato;
+    color: whitesmoke !important;
+    font-weight: bold;
+    border-radius: 25px;
+}
+
+.marginTop{
+    margin-top: 120px;
+}
+.card-Radius{
+    border-radius: 30px 0px 30px 0px;
+}
+.registerMain{
+    min-height: calc(100vh - 60px);
+}
+input[type='email']:focus,input[type='text']:focus,
+input[type='password']:focus,input[type='date']:focus,input[type='time']:focus,textarea:focus{
+    border-bottom: 3px solid tomato;
+}
+
+.borderRight{
+    border-left: 1px solid goldenrod;
+    margin-top: 100px;
+}
+.borderRadius{
+    border-radius: none !important;
+}
+.text-right{
+    text-align: right !important;
+}
+.colorChange:hover{
+    color: tomato !important;
+    font-weight: 800;
+    background: whitesmoke;
+}
+.tomato{color: tomato;font-weight: bold;}
+.dark{
+    color:dark;font-weight: 500;
+}
+
+.fixed-size{
+    display: flex;
+    max-height: auto;
+    overflow: hidden;
+    align-items: stretch;
+}
+.fixed-size .hieght{
+    height: 380px;
+}
+.rows{
+    display: flex;
+}
+.rows div{
+    padding: none !important;
+}
+.col1{
+    flex: 1;
+}
+.col2{
+    flex: 3;
+}
+
+.font-size{
+    font-weight: thin;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-size: 13px;
+}
+.font{
+    font: 13px;
+    font-weight: normal;
+}
