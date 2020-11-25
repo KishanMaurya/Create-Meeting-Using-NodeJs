@@ -2,7 +2,10 @@
   "name": "Jwt-Auth",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "server.js",
+  "engine":{
+    "node":"v12.17.0"
+  },
   "scripts": {
     "test": "jest",
     "serve": "node server.js"
