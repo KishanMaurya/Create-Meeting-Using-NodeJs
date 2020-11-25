@@ -13,8 +13,6 @@ const mongoose=require('mongoose')
 const passport =require('passport')
 const port=process.env.PORT || 3000
 
-
-
 //db connection
 // const url='mongodb://localhost/jwt_auth'
 mongoose.connect(process.env.MONGO_CONNECTION_URL,{
