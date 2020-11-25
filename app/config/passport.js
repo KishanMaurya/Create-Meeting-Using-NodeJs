@@ -1,6 +1,6 @@
 const LocalStrategy = require('passport-local').Strategy
 const User = require('../model/User')
-const bcrypt = require('bcrypt')
+const bcrypt = require('bcryptjs')
 function init(passport){
     passport.use(new LocalStrategy({ usernameField : 'email'},
         async (email , password, done)=>{
